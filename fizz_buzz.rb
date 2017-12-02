@@ -13,6 +13,7 @@ end
 
 fizz_buzz_loop(16)
 
+# incrementing a string
 def fizz_buzz_string(total)
   1.upto(total) do |i|
     fb = ''
@@ -27,3 +28,19 @@ def fizz_buzz_string(total)
 end
 
 fizz_buzz_string(16)
+
+# passing integer values
+def fizz_buzz_val(int1, int2, total)
+  1.upto(total) do |i|
+    fb = ''
+    if i % int1 ==0 || i % int2 == 0 
+      fb += 'fizz' if i % int1 == 0
+      fb += 'buzz' if i % int2 == 0
+      puts fb
+    else
+      puts i
+    end
+  end
+end
+
+fizz_buzz_val(2,6,100)
