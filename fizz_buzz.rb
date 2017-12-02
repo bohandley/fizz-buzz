@@ -44,3 +44,24 @@ def fizz_buzz_val(int1, int2, total)
 end
 
 fizz_buzz_val(2,6,100)
+
+# with single responsibility methods
+
+def fizz_buzz_methods(int1, int2, total)
+  1.upto(total) do |i|
+    fb = ''
+    if is_multiple(i, int1) || is_multiple(i, int2)
+      fb += 'fizz' if is_multiple(i, int1)
+      fb += 'buzz' if is_multiple(i, int2)
+      puts fb
+    else
+      puts i
+    end
+  end
+end
+
+def is_multiple(num, mult) 
+  num % mult == 0
+end
+
+fizz_buzz_methods(2,3,20)
