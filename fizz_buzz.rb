@@ -11,4 +11,5 @@ def fizz_buzz_loop(total)
   end
 end  
 
-fizz_buzz(16)
+fizz_buzz_loop(16)
+
