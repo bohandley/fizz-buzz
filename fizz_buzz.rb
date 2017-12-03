@@ -5,10 +5,13 @@
   # multiples of both int1 and int2 are replaced by 'fizzbuzz' 
 # with error handling for argument order
 # with error handling for arguments not integers
+# with error handling where int1 is greater than int2
 # with error handling for total < 1
 
 def fizz_buzz_with_care(args)
-  raise(ArgumentError, 'All values of args must be integers') if !args.values.all? {|i| i.class == Integer}
+  raise(ArgumentError, 'All values of args must be integers') if !args_values_integers?(args)
+  raise(ArgumentError, 'args[:int1] must be less than args[:int2]') if args[:int1] > args[:int2]
+  raise(ArgumentError, 'args[:total] must be greater than 1') if args[:total] < 1
   range = ''
   1.upto(args[:total]) do |i|
     fb = ''
@@ -27,7 +30,15 @@ def is_multiple(num, mult)
   num % mult == 0
 end
 
-values = { int1: 2, int2: 3, total: 24 }
+def args_values_integers?(args)
+  args.values.all? {|i| i.class == Integer}
+end
+
+values  = { int1: 2, int2: 3, total: 24 }
 values1 = { int1: 2, int2: 3, total: "24" }
+values2 = { int1: 5, int2: 3, total: 24 }
+values3 = { int1: 2, int2: 3, total: -1 }
 puts fizz_buzz_with_care(values)
 puts fizz_buzz_with_care(values1)
+# puts fizz_buzz_with_care(values2)
+# puts fizz_buzz_with_care(values3)
