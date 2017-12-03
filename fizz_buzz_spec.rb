@@ -31,7 +31,7 @@ describe 'Fizz-buzz' do
 
   describe 'throws an error' do
     it 'if any values of args are not integers' do
-      expect {fizz_buzz(values2)}.to raise_error ArgumentError
+      expect {fizz_buzz(values1)}.to raise_error ArgumentError
     end
 
     it 'if args[:int1] is greater than args[:int2]' do
