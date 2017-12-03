@@ -11,7 +11,7 @@ describe 'Fizz-buzz' do
     end
   end
 
-  describe 'string contains integers, fizz, buzz, or fizzbuzz' do
+  describe 'string output contains integers, fizz, buzz, or fizzbuzz' do
     it 'does not replace an integer if it is not a multiple of either int1 or int2' do
       expect(fizz_buzz(values).split[0]).to eq '1'
     end
