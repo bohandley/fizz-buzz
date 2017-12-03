@@ -9,17 +9,17 @@
 
 def fizz_buzz_with_care(args)
   range = ''
-  puts args[:total]
   1.upto(args[:total]) do |i|
     fb = ''
     if is_multiple(i, args[:int1]) || is_multiple(i, args[:int2])
       fb += 'fizz' if is_multiple(i, args[:int1])
       fb += 'buzz' if is_multiple(i, args[:int2])
-      puts fb
+      range += fb + "\n"
     else
-      puts i
+      range += i.to_s + "\n"
     end
   end
+  range
 end
 
 def is_multiple(num, mult) 
@@ -27,7 +27,7 @@ def is_multiple(num, mult)
 end
 
 values = { int1: 2, int2: 3, total: 24 }
-fizz_buzz_with_care(values)
+puts fizz_buzz_with_care(values)
 
 
 # with single responsibility methods
